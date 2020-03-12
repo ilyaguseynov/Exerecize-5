@@ -195,5 +195,4 @@ public class TestUp2 extends BaseTestUp2{
             Assert.fail();
         }
     }
-
 }
