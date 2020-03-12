@@ -194,7 +194,6 @@ public class TestUp2 extends BaseTestUp2{
             logger.error("TEST WAS FAILED bcs {}", e);
             Assert.fail();
         }
-
     }
 
 }
