@@ -6,6 +6,8 @@ import Up2.MainPage.MainPageElements;
 import Up2.MainPage.Objects.Tasks.FindTask;
 import Up2.MainPage.Objects.Tasks.NewTaskCreation;
 import Up2.TestData;
+import io.github.bonigarcia.wdm.DriverManagerType;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -37,7 +39,11 @@ public class BaseTestUp2 {
     @Before
     public  void setUp() throws Exception{
         //////// config
-        System.setProperty(TestData.configDataTest().get("DriverName").toString(), TestData.configDataTest().get("DriverPath").toString());
+//        System.setProperty(TestData.configDataTest().get("DriverName").toString(), TestData.configDataTest().get("DriverPath").toString());
+//        driver = new ChromeDriver();
+
+//        driver = null;
+        WebDriverManager.getInstance(DriverManagerType.CHROME).setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Long.parseLong(TestData.configDataTest().get("ImplicitlyWait").toString()), TimeUnit.SECONDS);

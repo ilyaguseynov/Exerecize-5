@@ -82,25 +82,31 @@ public class NewTaskCreation extends BasePage {
         return this;
     }
 
-//    public void selectFromCombobox (String value) {
-//        click(By.xpath("//ul [@role = 'listbox']//li [text() = '" + value +"']"));
-//    }
+    public void selectFromCombobox (String value) {
+        click(By.xpath("//ul [@role = 'listbox']//li [text() = '" + value +"']"));
+    }
+
+//    public NewTaskCreation selectStateForTask (String state) {
+//        click(TaskState);
+//        click(By.xpath("//ul [@role = 'listbox']//li [text() = '" + state +"']"));
+//        return this;
+//        }
 
     public NewTaskCreation selectStateForTask (String state) {
         click(TaskState);
-        click(By.xpath("//ul [@role = 'listbox']//li [text() = '" + state +"']"));
+        selectFromCombobox(state);
         return this;
     }
 
     public NewTaskCreation selectPriorityForNewTask(Integer Priority) {
         click(HelloTabInputPriorityList);
-        click(By.xpath("//ul [@role = 'listbox']//li [text() = '" + Priority +"']"));
+        selectFromCombobox(Priority);
         return this;
     }
 
     public NewTaskCreation selectProjectForNewTask(String Project) {
         click(HelloTabInputProjectList);
-        click(By.xpath("//ul [@role = 'listbox']//li [text() = '" + Project +"']"));
+        selectFromCombobox(Project);
         return this;
     }
 
