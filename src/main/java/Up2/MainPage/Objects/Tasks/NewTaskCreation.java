@@ -86,6 +86,10 @@ public class NewTaskCreation extends BasePage {
         click(By.xpath("//ul [@role = 'listbox']//li [text() = '" + value +"']"));
     }
 
+    public void selectFromCombobox (Integer value) {
+        click(By.xpath("//ul [@role = 'listbox']//li [text() = '" + value +"']"));
+    }
+
 //    public NewTaskCreation selectStateForTask (String state) {
 //        click(TaskState);
 //        click(By.xpath("//ul [@role = 'listbox']//li [text() = '" + state +"']"));
